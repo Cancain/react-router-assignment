@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
+import Course from '../Course/Course';
 import './Courses.css';
 
 class Courses extends Component {
@@ -12,13 +13,18 @@ class Courses extends Component {
         ]
     }
 
+    componentDidMount() {
+        console.log(this.props);
+    }
+
     courseClickHandler = (id, title) => {
-        this.props.history.push('/courses/' + id + '/' + title)
+        this.props.history.push({ pathname: '/courses/' + id + '/' + title })
     }
 
     render() {
         return (
             <div>
+
                 <h1>Amazing Udemy Courses</h1>
                 <section className="Courses">
                     {
@@ -32,6 +38,7 @@ class Courses extends Component {
                         })
                     }
                 </section>
+                <Route path={this.props.match.url + "/:id/:title"} component={Course} />
             </div>
         );
     }
