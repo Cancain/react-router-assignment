@@ -12,8 +12,8 @@ class Courses extends Component {
         ]
     }
 
-    courseClickHandler = (id) => {
-        this.props.history.push('/courses/' + id)
+    courseClickHandler = (id, title) => {
+        this.props.history.push('/courses/' + id + '/' + title)
     }
 
     render() {
@@ -24,7 +24,7 @@ class Courses extends Component {
                     {
                         this.state.courses.map(course => {
                             return <article
-                                onClick={() => this.courseClickHandler(course.id)}
+                                onClick={() => this.courseClickHandler(course.id, course.title)}
                                 className="Course"
                                 key={course.id} >
                                 {course.title}
