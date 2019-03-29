@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
 
 import Courses from './Courses/Courses';
 import Users from './Users/Users';
+import Course from './Course/Course.js';
 
 class App extends Component {
   render() {
@@ -34,7 +35,7 @@ class App extends Component {
 
           <Switch>
             <Route path='/users' component={Users} />
-            <Route path='/courses' component={Courses} />
+            <Route path='/courses' exact component={Courses} />
             <Route render={() => <h1>Page not found</h1>} />
           </Switch>
 
