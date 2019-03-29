@@ -18,7 +18,7 @@ class Courses extends Component {
     }
 
     courseClickHandler = (id, title) => {
-        this.props.history.push({ pathname: '/courses/' + id + '/' + title })
+        this.props.history.push({ pathname: '/courses/' + id + '/' + title });
     }
 
     render() {
