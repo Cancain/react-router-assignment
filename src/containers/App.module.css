@@ -1,0 +1,9 @@
+.App{
+    background-color: purple;
+}
+
+.NavList {
+    list-style-type: none;
+    display: flex;
+    flex-flow: row
+}
